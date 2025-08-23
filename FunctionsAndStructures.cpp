@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-//program: do this using structure and functions with one parameter
+//program:1- do this using structure and functions with one parameter
+// 2- use array of structures and make 2 functions for read & write 2 persons info in one time
 // Enter your Name: 
 // fatma
 // Enter your Age: 
@@ -27,6 +28,7 @@ struct strInfo{
 };
 void readInfo(strInfo &info){
     cout << "Enter your Name: " << endl;
+    cin.ignore();
     getline(cin,info.name);
     cout << "Enter your Age: " << endl;
     cin>>info.Age;
@@ -35,7 +37,7 @@ void readInfo(strInfo &info){
     cout << "Enter your Country: " << endl;
     cin>>info.country;
 }
-strInfo printInfo(strInfo info){
+void printInfo(strInfo info){
     cout << "***********************\n";
     cout << "Name: " << info.name << endl;
     cout << "Age: " << info.Age << " years" << endl;
@@ -44,9 +46,21 @@ strInfo printInfo(strInfo info){
     cout << "***********************\n";
 }
 
+void printInf2(strInfo person[2]){
+   printInfo(person[0]);
+   printInfo(person[1]);
+}
+void readInfo2(strInfo person[2]){
+   readInfo(person[0]);
+   readInfo(person[1]);
+}
+
 int main(){
-    strInfo person;
-    readInfo(person);
-    printInfo(person);
+    strInfo person[2];
+    // readInfo(person[0]);
+    // printInfo(person[0]);
+    
+    readInfo2(person);
+    printInf2(person);
     return 0;
 }
