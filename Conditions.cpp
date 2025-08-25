@@ -38,7 +38,7 @@ void evaluateMark(float mark){
         cout<<"Fail";
     }
 }
-//proplem 45: (using if else)
+//proplem 45: using if else once and switch another time
 // Write a program to ask the user to enter:
 //  • Month
 //  Then print the day as follows:
@@ -60,33 +60,78 @@ void evaluateMark(float mark){
 //  Outputs
 //  Novembe
 
+//solution using if else
+// void checkMonth(int month){
+//    if(month==1){
+//     cout<<"January";
+//    }else if(month==2){
+//     cout<<"February";
+//    }else if(month==3){
+//     cout<<"March";
+//    }else if(month==4){
+//     cout<<"April";
+//    }else if(month==5){
+//     cout<<"May";
+//    }else if(month==6){
+//     cout<<"June";
+//    }else if(month==7){
+//     cout<<"July";
+//    }else if(month==8){
+//     cout<<"August";
+//    }else if(month==9){
+//     cout<<"September";
+//    }else if(month==10){
+//     cout<<"October";
+//    }else if(month==11){
+//     cout<<"November";
+//    }else if(month==12){
+//     cout<<"December";
+//    }else{
+//     cout<<"Wrong Month";
+//    }
+// }
+
+//solution using switch:
 void checkMonth(int month){
-   if(month==1){
-    cout<<"January";
-   }else if(month==2){
-    cout<<"February";
-   }else if(month==3){
-    cout<<"March";
-   }else if(month==4){
-    cout<<"April";
-   }else if(month==5){
-    cout<<"May";
-   }else if(month==6){
-    cout<<"June";
-   }else if(month==7){
-    cout<<"July";
-   }else if(month==8){
-    cout<<"August";
-   }else if(month==9){
-    cout<<"September";
-   }else if(month==10){
-    cout<<"October";
-   }else if(month==11){
-    cout<<"November";
-   }else if(month==12){
-    cout<<"December";
-   }else{
-    cout<<"Wrong Month";
+   switch(month){
+      case 1:
+           cout<<"January";
+           break;
+      case 2:
+            cout<<"February";
+            break;
+      case 3: 
+            cout<<"March";
+            break;
+      case 4: 
+            cout<<"April";
+            break;
+      case 5:
+            cout<<"May";
+            break;
+      case 6:
+            cout<<"June";
+            break;
+      case 7: 
+            cout<<"July";
+            break;
+      case 8: 
+            cout<<"August";
+            break;
+      case 9: 
+            cout<<"September";
+            break;
+      case 10: 
+            cout<<"October";
+            break;
+      case 11: 
+            cout<<"November";
+            break;
+      case 12: 
+            cout<<"December";
+            break;
+      default:
+            cout<<"Wrong Month";
    }
 }
 
