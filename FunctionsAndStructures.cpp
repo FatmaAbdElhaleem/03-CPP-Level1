@@ -27,15 +27,16 @@ struct strInfo{
     string country;
 };
 void readInfo(strInfo &info){
-    cout << "Enter your Name: " << endl;
+    cout << "Enter Name: " << endl;
     cin.ignore();
     getline(cin,info.name);
-    cout << "Enter your Age: " << endl;
+    cout << "Enter Age: " << endl;
     cin>>info.Age;
-    cout << "Enter your City: " << endl;
+    cout << "Enter City: " << endl;
     cin>>info.city;
-    cout << "Enter your Country: " << endl;
+    cout << "Enter Country: " << endl;
     cin>>info.country;
+    
 }
 void printInfo(strInfo info){
     cout << "***********************\n";
@@ -46,21 +47,28 @@ void printInfo(strInfo info){
     cout << "***********************\n";
 }
 
-void printInf2(strInfo person[2]){
-   printInfo(person[0]);
-   printInfo(person[1]);
+void printInf2(strInfo person[100],int count){
+    for(int i=0;i<count;i++){
+        cout<<"person's "<<i+1<<" info:\n";
+        printInfo(person[i]);
+    }
 }
-void readInfo2(strInfo person[2]){
-   readInfo(person[0]);
-   readInfo(person[1]);
+void readInfo2(strInfo person[100],int &count){
+    cout <<"Enter the number of people info that you want to enter (with max number 100): ";
+    cin>>count;
+    for(int i=0;i<count;i++){
+       cout<<"please enter person's "<<i+1<<" info:\n";
+       readInfo(person[i]);
+       cout<<"******************\n";
+    }
 }
 
 int main(){
-    strInfo person[2];
+    strInfo person[100];
     // readInfo(person[0]);
-    // printInfo(person[0]);
-    
-    readInfo2(person);
-    printInf2(person);
+    // printInfo(person[0]); 
+    int count;
+    readInfo2(person,count);
+    printInf2(person,count);
     return 0;
 }
