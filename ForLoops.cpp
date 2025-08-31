@@ -17,11 +17,24 @@ using namespace std;
 //  9
 //  10
 
+//solution with for loop
+
+// void printNumbersAscending(int N){
+//     for (int i=1;i<=N;i++){
+//         cout<<i<<endl;
+//     }
+//    cout<<"*****************\n";
+// }
+
+//solution with while loop
+
 void printNumbersAscending(int N){
-    for (int i=1;i<=N;i++){
-        cout<<i<<endl;
+    int i=1;
+    while (i<=N)
+    {
+        cout<<i++<<endl;
     }
-   cout<<"*****************\n";
+    cout<<"*****************\n";
 }
 
 //proplem 27:
@@ -39,11 +52,23 @@ void printNumbersAscending(int N){
 //  3
 //  2
 //  1
+
+//solution with for loop
+
+// void printNumbersDescending(int N){
+//     for(int i=N;i>=1;i--){
+//        cout<<i<<endl;
+//     }
+//     cout<<"***********************\n";
+// }
+
+//solution with while loop
 void printNumbersDescending(int N){
-    for(int i=N;i>=1;i--){
-       cout<<i<<endl;
+    while (N>=1)
+    {
+        cout<<N--<<endl;
     }
-    cout<<"***********************\n";
+    
 }
 
 // Problem 28: 
@@ -55,9 +80,20 @@ void printNumbersDescending(int N){
 
 int sumOdd(int N){
     int sum=0;
-    for(int i=1;i<=N;i=i+2){
-       sum=sum+i;
+    //solution with for loop
+
+    // for(int i=1;i<=N;i=i+2){
+    //    sum=sum+i;
+    // }
+
+    //solution with while loop
+    int i=1;
+    while (i<=N)
+    {
+        sum=sum+i;
+        i=i+2;
     }
+
     return sum;
      
 }
@@ -71,9 +107,20 @@ int sumOdd(int N){
 
 int sumEven(int N){
     int sum=0;
-    for(int i=0;i<=N;i=i+2){
-       sum=sum+i;
+    //solution with for loop
+
+    // for(int i=0;i<=N;i=i+2){
+    //    sum=sum+i;
+    // }
+
+    //solution with while loop
+    int i=0;
+    while (i<=N)
+    {
+        sum+=i;
+        i+=2;
     }
+    
     return sum;
 }
 
@@ -89,13 +136,22 @@ int sumEven(int N){
 // 6 x 5 x 4 x 3 x 2 x 1 
 // n-0 * n-1 * n-2 * n-3 * n-4 * n-5
 // n-(i)
+//
 
 int calculateFactorial(int N){
     int result=1;
-    for(int i=0;i<N;i++){
-        result=result*(N-i);
-    }  
+    // solution with for loop
+    // for(int i=0;i<N;i++){
+    //     result=result*(N-i);
+    // }  
 
+    //solution using while loop
+    int i=1;
+    while (i<=N)
+    {
+        result*=i;
+        i++;
+    }
     return result;
 }
 
@@ -111,17 +167,28 @@ int calculateFactorial(int N){
 // 16
 
 //Draft for thinking :
-//2^4=2*2*2*2  
+//2^4=2*2*2*2
+//2^0=1 -->   
 
 int power(int base,int exponent){
     int result =1;
-    for(int i=0;i<exponent;i++){
+    //solution with for loop
+    // for(int i=0;i<exponent;i++){
+    //     result=result*base;
+    // }
+
+    //solution using while loop
+    int i=0;
+    while (i<exponent)
+    {
         result=result*base;
+        i++;
     }
+    
     return result;
 }
 
-// Problem: 
+// Problem 46: 
 // Write a program to print all letters from A to Z
 //  Outputs
 //  A
@@ -134,10 +201,22 @@ int power(int base,int exponent){
 // note : ascii from 65 to 90  and use char(i) function
 
 void printLetters(){
-    for(int i=65; i<=90;i++) {
-       cout<< char(i)<<endl;
+    //solution with for loop
+    // for(int i=65; i<=90;i++) {
+    //    cout<< char(i)<<endl;
+    // }
+
+    //solution with while loop
+    int i=65;
+    while (i<=90)
+    {
+        cout<< char(i)<<endl;
+        i++;
     }
+    
 }
+
+
 
 int main(){
     //problem 26:
